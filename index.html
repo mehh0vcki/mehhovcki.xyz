@@ -26,20 +26,29 @@
                 <a href="/dave" target="_blank" rel="noopener noreferrer" class="icon">
                     <img src="https://github.com/mehh0vcki/mehhovcki.xyz/blob/main/data/dave.png?raw=true" alt="Dave" width="64" height="64">
                 </a>
-                <div href="https://www.roblox.com/users/3341972045/profile" class="icon disabled white-filter">
+                <a href="https://www.roblox.com/users/3341972045/profile" class="icon white-filter">
                     <img src="https://github.com/mehh0vcki/mehhovcki.xyz/blob/main/data/roblox.png?raw=true" alt="Roblox" width="64" height="64">
-                </div>
+                </a>
             </div>
         </div>
     </div>
 <!--     <script src="script.js"></script> -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const socialIcons = document.getElementById('socialIcons');
-            
-            setTimeout(() => {
-                socialIcons.classList.add('visible');
-            }, 2000);
+            const blobs = document.querySelectorAll('.blob');
+        
+            blobs.forEach(blob => {
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
+                const randomDuration = Math.random() * (10 - 5) + 5;
+                blob.style.animationDuration = `${randomDuration}s`;
+                blob.style.animationTimingFunction = 'linear';
+                blob.style.animationIterationCount = 'infinite';
+                blob.style.left = `${randomX}vw`;
+                blob.style.top = `${randomY}vh`;
+                const randomDelay = Math.random() * 5;
+                blob.style.animationDelay = `${randomDelay}s`;
+            });
         });
     </script>
     <style>
