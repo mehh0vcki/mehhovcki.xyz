@@ -1,1 +1,92 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Redirect Page - Dark Theme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #181818;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #444;
+            background-color: #222;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .timer {
+            font-size: 2.5em;
+            color: #ff6347;
+        }
+        .cancel-btn {
+            background-color: #ff6347;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        .cancel-btn:hover {
+            background-color: #e55347;
+        }
+        .cancel-btn:active {
+            background-color: #cc4437;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You will be redirected soon</h1>
+        <p>Redirecting to <span id="redirect-url">https://example.com</span> in <span class="timer" id="timer">10</span> seconds.</p>
+        <button class="cancel-btn" id="cancelBtn">Cancel Redirection</button>
+    </div>
+
+    <script>
+        // Redirect URL
+        const redirectUrl = 'https://discord.gg/gc7FzwAaJB'; // Change this to your target URL
+        
+        // Countdown Timer
+        let countdown = 10;
+        const timerElement = document.getElementById('timer');
+        const cancelBtn = document.getElementById('cancelBtn');
+
+        // Function to update the countdown timer
+        const updateTimer = () => {
+            countdown--;
+            timerElement.textContent = countdown;
+
+            if (countdown === 0) {
+                window.location.href = redirectUrl;
+            }
+        };
+
+        // Start the countdown timer
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        // Handle the cancel button click
+        cancelBtn.addEventListener('click', () => {
+            clearInterval(timerInterval); // Stop the countdown
+            alert('Redirection cancelled!');
+        });
+    </script>
+</body>
+</html>
