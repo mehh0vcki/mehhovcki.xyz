@@ -56,20 +56,17 @@
 <body>
     <div class="container">
         <h1>You will be redirected soon</h1>
-        <p>Redirecting to <span id="redirect-url">https://example.com</span> in <span class="timer" id="timer">10</span> seconds.</p>
+        <p>Redirecting to <span id="redirect-url">dave's discord server</span> in <span class="timer" id="timer">10</span> seconds.</p>
         <button class="cancel-btn" id="cancelBtn">Cancel Redirection</button>
     </div>
 
     <script>
-        // Redirect URL
-        const redirectUrl = 'https://discord.gg/gc7FzwAaJB'; // Change this to your target URL
+        const redirectUrl = 'https://discord.gg/gc7FzwAaJB';
         
-        // Countdown Timer
         let countdown = 10;
         const timerElement = document.getElementById('timer');
         const cancelBtn = document.getElementById('cancelBtn');
 
-        // Function to update the countdown timer
         const updateTimer = () => {
             countdown--;
             timerElement.textContent = countdown;
@@ -79,13 +76,11 @@
             }
         };
 
-        // Start the countdown timer
         const timerInterval = setInterval(updateTimer, 1000);
 
-        // Handle the cancel button click
         cancelBtn.addEventListener('click', () => {
-            clearInterval(timerInterval); // Stop the countdown
-            alert('Redirection cancelled!');
+            clearInterval(timerInterval);
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         });
     </script>
 </body>
