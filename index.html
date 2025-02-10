@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mehhovcki</title>
-    <link rel="stylesheet" href="style.css">
+<!--     <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <div class="container">
@@ -32,6 +32,166 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+<!--     <script src="script.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socialIcons = document.getElementById('socialIcons');
+            
+            setTimeout(() => {
+                socialIcons.classList.add('visible');
+            }, 2000);
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: black;
+            color: white;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .background {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(30px);
+            animation: blob 10s infinite;
+        }
+        
+        .blob-1 {
+            background: rgba(55, 65, 81, 0.2);
+            top: -12rem;
+            left: -12rem;
+        }
+        
+        .blob-2 {
+            background: rgba(31, 41, 55, 0.2);
+            bottom: -12rem;
+            right: -12rem;
+            animation-delay: 2s;
+        }
+        
+        .blob-3 {
+            background: rgba(55, 65, 81, 0.2);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 4s;
+        }
+        
+        .blob-4 {
+            background: rgba(41, 51, 65, 0.2);
+            top: -8rem;
+            right: 25%;
+            animation-delay: 6s;
+        }
+        
+        .blob-5 {
+            background: rgba(45, 55, 72, 0.2);
+            bottom: -6rem;
+            left: 25%;
+            animation-delay: 8s;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3.75rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        p {
+            font-size: 1.25rem;
+            color: #9CA3AF;
+            margin-bottom: 2rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .social-icons.visible {
+            opacity: 1;
+        }
+        
+        .icon {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .icon:hover {
+            color: #9CA3AF;
+        }
+        
+        .icon.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .icon img {
+            width: 64px;
+            height: 64px;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon:hover img {
+            transform: scale(1.1);
+        }
+        
+        .white-filter img {
+            filter: brightness(0) invert(1);
+        }
+        
+        @keyframes blob {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(20px, -50px) scale(1.1);
+            }
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            75% {
+                transform: translate(-40px, -20px) scale(1.15);
+            }
+        }
+    </style>
 </body>
 </html>
+<!-- i don't understand how the ---- you connect style.css with this file. i never used pages before. sucks to suck i guess -->
