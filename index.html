@@ -35,23 +35,6 @@
 <!--     <script src="script.js"></script> -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const blobs = document.querySelectorAll('.blob');
-        
-            blobs.forEach(blob => {
-                const randomX = Math.random() * 100;
-                const randomY = Math.random() * 100;
-                const randomDuration = Math.random() * (10 - 5) + 5;
-                blob.style.animationDuration = `${randomDuration}s`;
-                blob.style.animationTimingFunction = 'linear';
-                blob.style.animationIterationCount = 'infinite';
-                blob.style.left = `${randomX}vw`;
-                blob.style.top = `${randomY}vh`;
-                const randomDelay = Math.random() * 5;
-                blob.style.animationDelay = `${randomDelay}s`;
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
             const socialIcons = document.getElementById('socialIcons');
             
             setTimeout(() => {
